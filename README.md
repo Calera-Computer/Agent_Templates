@@ -8,10 +8,11 @@ To start a new project using these templates, follow these steps:
 
 1.  **Start a conversation with an AI assistant.**
 2.  **Provide the assistant with the prompt from `PROMPT.md`**. This will configure the assistant to act as a "Project Scaffolding Assistant."
-3.  **Answer the assistant's three simple questions**:
+3.  **Answer the assistant's four simple questions**:
     *   Project Name
     *   Project Type (e.g., "web service", "CLI tool", "library")
     *   Primary Programming Languages
+    *   Primary Database (e.g., "PostgreSQL", "MongoDB", "MySQL", "None")
 4.  The assistant will **immediately generate two customized documents** with sensible defaults:
     *   A project README (`PROJECT_README.md`)
     *   A unified AI agent context file (`AGENT_CONTEXT.md`) containing both instructions and development rules

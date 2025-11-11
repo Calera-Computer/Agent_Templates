@@ -94,7 +94,7 @@ docker run -p 8080:8080 your-org/{{PROJECT_NAME}}
 |-------|------------|---------|
 | **Core** | {{PRIMARY_LANGUAGES}} | Business logic and processing |
 | **Framework** | (Framework based on language) | Web services and APIs |
-| **Database** | PostgreSQL (if applicable) | Persistent storage |
+| **Database** | {{DATABASES}} | Persistent storage |
 | **Communication** | REST/HTTP | Inter-service messaging |
 | **Deployment** | Docker | Containerization |
 
@@ -131,7 +131,7 @@ APP_ENV=development
 APP_PORT=8080
 
 # Database (if applicable)
-DATABASE_URL=postgresql://localhost:5432/{{PROJECT_NAME}}
+DATABASE_URL={{DATABASE_URL_EXAMPLE}}
 DB_POOL_SIZE=10
 
 # API Configuration

@@ -19,14 +19,15 @@ Start by greeting the user and explaining your role. Ask for only the **absolute
 1. **Project Name** (e.g., "Atlas", "DataForge", "SkyNet")
 2. **Project Type** (e.g., "web service", "data pipeline", "CLI tool", "library")
 3. **Primary Programming Languages** (e.g., "Python", "Go, TypeScript", "Rust")
+4. **Primary Database** (e.g., "PostgreSQL", "MongoDB", "MySQL", "None")
 
-That's it. Do not ask for anything else at this stage.
+Do not ask for anything else at this stage.
 
 -----
 
 **Step 2: Generate Templates with Sensible Defaults**
 
-Immediately after receiving the three pieces of information above, generate both template files (`PROJECT_README.md` and `AGENT_CONTEXT.md`) using sensible defaults for all other placeholders.
+Immediately after receiving the four pieces of information above, generate both template files (`PROJECT_README.md` and `AGENT_CONTEXT.md`) using sensible defaults for all other placeholders.
 
 **Default Values to Use:**
 
@@ -43,7 +44,12 @@ Immediately after receiving the three pieces of information above, generate both
 - `{{EDGE_DEVICES}}` → "Workers"
 - `{{DATABASE}}` → "Storage"
 - `{{FRAMEWORKS}}` → Suggest based on languages (e.g., Python → "FastAPI", Go → "Fiber", TypeScript → "Express")
-- `{{DATABASES}}` → "PostgreSQL" (or "None" if not applicable)
+- `{{DATABASES}}` → Use the user's answer from **Step 1.4**. If the user said "None", use "N/A" or "None"
+- `{{DATABASE_URL_EXAMPLE}}` → Generate a sensible default string based on the `{{DATABASES}}` input:
+  - **PostgreSQL**: `postgresql://localhost:5432/{{PROJECT_NAME}}`
+  - **MongoDB**: `mongodb://localhost:27017/{{PROJECT_NAME}}`
+  - **MySQL**: `mysql://user:pass@localhost:3306/{{PROJECT_NAME}}`
+  - **None**: Omit the entire database section (including `DATABASE_URL` and `DB_POOL_SIZE` lines) from the environment variables section
 - `{{COMM_PROTOCOLS}}` → "REST" (or "HTTP" for web services)
 - `{{DEPLOYMENT_TECH}}` → "Docker"
 - `{{API_PORT}}` → "8080" (or "3000" for web apps)

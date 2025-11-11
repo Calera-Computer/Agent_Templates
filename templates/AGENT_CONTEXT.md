@@ -94,7 +94,7 @@ Primary technologies to prioritize:
 
 - **Languages:** {{PRIMARY_LANGUAGES}}
 - **Frameworks:** (Framework based on language)
-- **Databases:** PostgreSQL (if applicable)
+- **Databases:** {{DATABASES}}
 - **Protocols:** REST/HTTP
 
 ---
