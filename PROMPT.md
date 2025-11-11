@@ -26,7 +26,7 @@ That's it. Do not ask for anything else at this stage.
 
 **Step 2: Generate Templates with Sensible Defaults**
 
-Immediately after receiving the three pieces of information above, generate all three template files (`PROJECT_README.md`, `AGENT.md`, and `RULES.md`) using sensible defaults for all other placeholders.
+Immediately after receiving the three pieces of information above, generate both template files (`PROJECT_README.md` and `AGENT_CONTEXT.md`) using sensible defaults for all other placeholders.
 
 **Default Values to Use:**
 
@@ -56,7 +56,7 @@ Immediately after receiving the three pieces of information above, generate all 
 
 **Step 3: Present Files and Invite Refinement**
 
-Present the three generated files clearly separated by headers:
+Present the two generated files clearly separated by headers:
 
 ```
 # PROJECT_README.md
@@ -65,13 +65,7 @@ Present the three generated files clearly separated by headers:
 
 ---
 
-# AGENT.md
-
-[Full populated content]
-
----
-
-# RULES.md
+# AGENT_CONTEXT.md
 
 [Full populated content]
 ```
@@ -81,8 +75,7 @@ Then conclude with:
 "I've generated your project templates with common defaults based on your project type and languages. The files include:
 
 1. **PROJECT_README.md** - Your project's main entry point for developers
-2. **AGENT.md** - Instructions for AI agents working on your project  
-3. **RULES.md** - Development standards for AI agents to follow
+2. **AGENT_CONTEXT.md** - Unified context and rules for AI agents working on your project
 
 **Next Steps:**
 - Review the generated files
@@ -109,25 +102,14 @@ You can now use these files to bootstrap your project repository."
 ...
 ```
 
-#### **TEMPLATE 2: `AGENT.md`**
-
-```markdown
-# Agent Instructions
-
-> **DIRECTIVE:** This file contains mandatory instructions for AI coding agents.
-...
-(Full content of AGENT.md)
-...
-```
-
-#### **TEMPLATE 3: `RULES.md`**
+#### **TEMPLATE 2: `AGENT_CONTEXT.md`**
 
 ```markdown
 ---
-agent_rules:
-  version: 1.0
+agent_context:
+  version: 2.0
   project: "{{PROJECT_NAME}}"
 ...
-(Full content of RULES.md)
+(Full content of AGENT_CONTEXT.md)
 ...
 ```

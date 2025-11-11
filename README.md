@@ -12,10 +12,9 @@ To start a new project using these templates, follow these steps:
     *   Project Name
     *   Project Type (e.g., "web service", "CLI tool", "library")
     *   Primary Programming Languages
-4.  The assistant will **immediately generate three customized documents** with sensible defaults:
+4.  The assistant will **immediately generate two customized documents** with sensible defaults:
     *   A project README (`PROJECT_README.md`)
-    *   An AI agent instruction file (`AGENT.md`)
-    *   A set of development rules for the agent (`RULES.md`)
+    *   A unified AI agent context file (`AGENT_CONTEXT.md`) containing both instructions and development rules
 5.  **Review and refine** the generated files to match your specific project needs.
 6.  **Use these files** to bootstrap your new project repository.
 
@@ -23,8 +22,7 @@ To start a new project using these templates, follow these steps:
 
 *   **`PROMPT.md`**: A prompt to configure an AI assistant for quick, iterative project scaffolding. The assistant asks for minimal information and generates templates with sensible defaults.
 *   **`templates/`**: This directory contains the base templates that will be populated by the assistant:
-    *   `AGENT.md`: A template for providing instructions to an AI coding agent.
-    *   `RULES.md`: A template for defining development standards and rules for an AI agent to follow.
+    *   `AGENT_CONTEXT.md`: A unified template containing both AI agent instructions and development rules, with operational modes (design, implementation, debug).
     *   `PROJECT_README.md`: A comprehensive template for a project's `README.md` file.
 
 ## Philosophy

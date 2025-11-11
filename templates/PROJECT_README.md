@@ -113,8 +113,7 @@ docker run -p 8080:8080 your-org/{{PROJECT_NAME}}
 │   ├── staging.env
 │   └── production.env
 ├── /scripts          # Build and utility scripts
-├── AGENT.md          # AI agent instructions
-├── RULES.md          # Development standards
+├── AGENT_CONTEXT.md  # AI agent context and rules
 └── README.md         # This file
 ```
 
@@ -186,7 +185,7 @@ cd {{PROJECT_NAME}}
    git checkout -b feat/feature-name
    ```
 
-2. **Make changes following [RULES.md](RULES.md)**
+2. **Make changes following [AGENT_CONTEXT.md](AGENT_CONTEXT.md)**
 
 3. **Run tests:**
    ```bash
@@ -210,7 +209,7 @@ cd {{PROJECT_NAME}}
 
 ### Code Standards
 
-This project follows strict development standards defined in **[RULES.md](RULES.md)**:
+This project follows strict development standards defined in **[AGENT_CONTEXT.md](AGENT_CONTEXT.md)**:
 
 - ✅ Conventional Commits
 - ✅ Atomic, self-contained changes
@@ -300,10 +299,9 @@ curl http://localhost:8080/metrics
 
 ## 🤖 AI Agent Integration
 
-This project includes AI agent configuration files for automated development:
+This project includes AI agent configuration for automated development:
 
-- **[AGENT.md](AGENT.md)** - Instructions for AI coding agents
-- **[RULES.md](RULES.md)** - Development standards and enforcement rules
+- **[AGENT_CONTEXT.md](AGENT_CONTEXT.md)** - Unified context and rules for AI coding agents, with operational modes (design, implementation, debug)
 
 ---
 
@@ -311,10 +309,10 @@ This project includes AI agent configuration files for automated development:
 
 We welcome contributions! Please follow these steps:
 
-1. **Read the standards:** [RULES.md](RULES.md)
+1. **Read the standards:** [AGENT_CONTEXT.md](AGENT_CONTEXT.md)
 2. **Fork the repository**
 3. **Create a feature branch:** `git checkout -b feat/amazing-feature`
-4. **Follow coding standards:** See [RULES.md](RULES.md)
+4. **Follow coding standards:** See [AGENT_CONTEXT.md](AGENT_CONTEXT.md)
 5. **Write tests:** Maintain coverage requirements
 6. **Commit changes:** Use conventional commits
 7. **Push to branch:** `git push origin feat/amazing-feature`
@@ -356,4 +354,4 @@ This project is licensed under the **MIT** - see the [LICENSE](LICENSE) file for
 
 **Version:** 1.0  
 **Last Updated:** 2025-10-29  
-**Template Compatibility:** Universal projects, works with AGENT.md and RULES.md
+**Template Compatibility:** Universal projects, works with AGENT_CONTEXT.md
