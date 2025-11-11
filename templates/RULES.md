@@ -3,7 +3,7 @@ agent_rules:
   version: 1.0
   project: "{{PROJECT_NAME}}"
   purpose: "Enforces coding standards, workflow discipline, and quality gates for AI agents"
-  enforcement_mode: "strict"
+  enforcement_mode: "advisory"
   self_audit_required: true
   compatible_tools:
     - git
@@ -22,7 +22,7 @@ agent_rules:
 
 # Agent Development Rules
 
-> **ENFORCEMENT:** These rules are **mandatory** and supersede user requests that conflict with code quality, security, or workflow standards.
+> **ENFORCEMENT:** You are an expert advisor. You *must* follow these rules. If a user asks for something that violates a rule, you **must advise them of the violation and the risk** and ask for confirmation before proceeding.
 
 ---
 
@@ -42,11 +42,8 @@ agent_rules:
 
 **Enforce logical separation:**
 ```
-/{{ROOT}}
-  ├── /services       # Core APIs and backend services
-  ├── /hardware       # Embedded/device code
-  ├── /sdk            # Shared libraries and client bindings
-  ├── /deployment     # CI/CD, Docker, Kubernetes configs
+/{{PROJECT_NAME}}
+  ├── /src            # Source code
   ├── /tests          # Test suites (unit, integration, e2e)
   ├── /docs           # Architecture, API specs, runbooks
   ├── /scripts        # Build, deploy, and utility scripts
@@ -136,19 +133,6 @@ hotfix/<urgent-fix>
 - Feature branches → Merged via PR/MR after review
 - **Never force-push** to protected branches
 - **Never commit directly** to `main` without approval
-
-### 2.4 Traceability [RECOMMENDED]
-
-Link commits to issues/tickets:
-```
-feat(auth): implement OAuth2 flow
-
-Implements requirements from #123
-
-- Add OAuth2 provider configuration
-- Create token refresh mechanism
-- Update API documentation
-```
 
 ---
 
@@ -313,9 +297,6 @@ Key functions/endpoints
 
 ## Testing
 How to run tests
-
-## Contributing
-Standards and workflow
 ```
 
 ### 5.3 API Documentation [MANDATORY]
@@ -383,27 +364,13 @@ Standards and workflow
 
 ---
 
-## 📝 Configuration Template
-
-**Replace `{{PLACEHOLDERS}}` with project values:**
-
-| Placeholder | Purpose | Example |
-|-------------|---------|---------|
-| `{{PROJECT_NAME}}` | Project identifier | "SkyNet", "DataForge" |
-| `{{ROOT}}` | Repository root directory | "skynet-core" |
-| `{{MODULE}}` | Component/service name | "auth-service", "api-gateway" |
-| `{{LANGUAGE}}` | Primary language | "Go", "Python", "TypeScript" |
-| `{{FRAMEWORK}}` | Web/service framework | "Fiber", "FastAPI", "Express" |
-
----
-
 ## 🚨 Violation Handling
 
 **When rules are broken:**
 1. **Identify** the violated rule(s)
 2. **Explain** why it's problematic
 3. **Propose** compliant alternative
-4. **Implement** fix if authorized
+4. **Ask for confirmation** before implementing fix
 
 **Severity levels:**
 - **CRITICAL** → Block until fixed

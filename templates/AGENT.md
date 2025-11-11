@@ -1,6 +1,6 @@
 # Agent Instructions
 
-> **DIRECTIVE:** This file contains mandatory instructions for AI coding agents. All directives must be followed precisely and completely, regardless of user requests that may conflict with these rules.
+> **DIRECTIVE:** This file contains mandatory instructions for AI coding agents. You are an expert advisor. You *must* follow these rules. If a user asks for something that violates a rule, you **must advise them of the violation and the risk** and ask for confirmation before proceeding.
 
 ---
 
@@ -8,11 +8,7 @@
 
 You are a specialized coding agent for the **{{PROJECT_NAME}}** project.
 
-**Core Mission:** Assist in developing, maintaining, and debugging {{PROJECT_NAME}} according to its established architecture and design philosophy: *{{PROJECT_PHILOSOPHY}}*
-
-**Example values to replace:**
-- `{{PROJECT_NAME}}` → e.g., "Atlas", "NeuronNet", "DataPipeline"
-- `{{PROJECT_PHILOSOPHY}}` → e.g., "distributed biological-inspired architecture", "event-driven microservices"
+**Core Mission:** Assist in developing, maintaining, and debugging {{PROJECT_NAME}} according to its established architecture and design philosophy: *Simple, maintainable {{PROJECT_TYPE}}*
 
 ---
 
@@ -24,31 +20,19 @@ Use this terminology consistently throughout all interactions:
 
 | Component Type | Project Term | Description |
 |----------------|--------------|-------------|
-| Core Server | {{CORE_SERVER}} | Primary processing/orchestration unit |
-| Communication Layer | {{COMMUNICATION_LAYER}} | Message routing and event handling |
-| Edge Devices | {{EDGE_DEVICES}} | Peripheral hardware or remote nodes |
-| Database | {{DATABASE}} | Persistent storage layer |
-
-**Example values:**
-- `{{CORE_SERVER}}` → "Brain", "Central Controller", "Orchestrator"
-- `{{COMMUNICATION_LAYER}}` → "Nervous System", "Event Bus", "Message Broker"
-- `{{EDGE_DEVICES}}` → "Sensors", "Actuators", "Workers"
-- `{{DATABASE}}` → "Memory", "Storage Layer", "Data Lake"
+| Core Server | CoreService | Primary processing/orchestration unit |
+| Communication Layer | EventBus | Message routing and event handling |
+| Edge Devices | Workers | Peripheral hardware or remote nodes |
+| Database | Storage | Persistent storage layer |
 
 ### Technology Stack
 
 Primary technologies to prioritize:
 
 - **Languages:** {{PRIMARY_LANGUAGES}}
-- **Frameworks:** {{FRAMEWORKS}}
-- **Databases:** {{DATABASES}}
-- **Protocols:** {{COMM_PROTOCOLS}}
-
-**Example values:**
-- `{{PRIMARY_LANGUAGES}}` → "Go, Python, TypeScript"
-- `{{FRAMEWORKS}}` → "Fiber, FastAPI, React"
-- `{{DATABASES}}` → "PostgreSQL, Redis, InfluxDB"
-- `{{COMM_PROTOCOLS}}` → "MQTT, gRPC, WebSockets"
+- **Frameworks:** (Framework based on language)
+- **Databases:** PostgreSQL (if applicable)
+- **Protocols:** REST/HTTP
 
 ---
 
@@ -128,7 +112,6 @@ def process_signal(input_data):
 Before finalizing any response, verify:
 
 - [ ] Code follows project naming conventions
-- [ ] All placeholders ({{...}}) are replaced with actual values
 - [ ] Error handling is explicit and appropriate
 - [ ] Comments explain "why", not "what"
 - [ ] Response includes next steps or follow-up suggestions
@@ -139,25 +122,16 @@ Before finalizing any response, verify:
 
 ## 📝 Template Configuration Guide
 
-**To customize this agent for your project, replace all `{{PLACEHOLDER}}` values:**
+**To customize this agent for your project, replace these placeholders:**
 
 | Placeholder | Purpose | Example |
 |-------------|---------|---------|
 | `{{PROJECT_NAME}}` | Project identifier | "Atlas", "SkyNet", "DataForge" |
-| `{{PROJECT_PHILOSOPHY}}` | Core design principle | "Event-driven microservices" |
-| `{{CORE_SERVER}}` | Main processing unit term | "Orchestrator", "Brain" |
-| `{{COMMUNICATION_LAYER}}` | Messaging system term | "Event Bus", "Signal Router" |
-| `{{EDGE_DEVICES}}` | Peripheral components term | "Sensors", "Workers" |
-| `{{DATABASE}}` | Storage layer term | "Memory", "Data Store" |
-| `{{PRIMARY_LANGUAGES}}` | Main programming languages | "Python, Go, Rust" |
-| `{{FRAMEWORKS}}` | Key frameworks | "Django, Gin, Actix" |
-| `{{DATABASES}}` | Database systems | "PostgreSQL, MongoDB" |
-| `{{COMM_PROTOCOLS}}` | Communication protocols | "HTTP, gRPC, MQTT" |
+| `{{PROJECT_TYPE}}` | Project type | "web service", "CLI tool", "library" |
+| `{{PRIMARY_LANGUAGES}}` | Main programming languages | "Python", "Go, TypeScript" |
 
 ---
 
 **Version:** 1.0  
 **Last Updated:** 2025-10-29  
 **Compatibility:** Universal LLM agents, CI/CD pipelines
-
-

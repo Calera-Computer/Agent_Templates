@@ -1,31 +1,31 @@
 # {{PROJECT_NAME}}
 
-> {{PROJECT_TAGLINE}}
+> A {{PROJECT_TYPE}} built with {{PRIMARY_LANGUAGES}}
 
-[![Build Status](https://img.shields.io/github/workflow/status/{{ORG}}/{{REPO}}/CI)](https://github.com/{{ORG}}/{{REPO}}/actions)
-[![License](https://img.shields.io/badge/license-{{LICENSE}}-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-{{VERSION}}-green.svg)](CHANGELOG.md)
+[![Build Status](https://img.shields.io/github/workflow/status/your-org/{{PROJECT_NAME}}/CI)](https://github.com/your-org/{{PROJECT_NAME}}/actions)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-0.1.0-green.svg)](CHANGELOG.md)
 
 ---
 
 ## 📖 Overview
 
-**{{PROJECT_NAME}}** is a {{PROJECT_TYPE}} that {{PROJECT_PURPOSE}}.
+**{{PROJECT_NAME}}** is a {{PROJECT_TYPE}} that provides core functionality and services.
 
-**Core Philosophy:** {{PROJECT_PHILOSOPHY}}
+**Core Philosophy:** Simple, maintainable {{PROJECT_TYPE}}
 
 ### Key Features
 
-- ✅ **{{FEATURE_1}}** - {{FEATURE_1_DESCRIPTION}}
-- ✅ **{{FEATURE_2}}** - {{FEATURE_2_DESCRIPTION}}
-- ✅ **{{FEATURE_3}}** - {{FEATURE_3_DESCRIPTION}}
-- ✅ **{{FEATURE_4}}** - {{FEATURE_4_DESCRIPTION}}
+- ✅ **Core Functionality** - Essential features for the project
+- ✅ **API Integration** - RESTful API endpoints
+- ✅ **Configuration Management** - Environment-based configuration
+- ✅ **Documentation** - Comprehensive documentation and examples
 
 ### Use Cases
 
-- **{{USE_CASE_1}}:** {{USE_CASE_1_DESCRIPTION}}
-- **{{USE_CASE_2}}:** {{USE_CASE_2_DESCRIPTION}}
-- **{{USE_CASE_3}}:** {{USE_CASE_3_DESCRIPTION}}
+- **Development:** Local development and testing
+- **Production:** Deployable production-ready application
+- **Integration:** Easy integration with other services
 
 ---
 
@@ -33,41 +33,34 @@
 
 ### Prerequisites
 
-- **{{LANGUAGE_1}}** {{VERSION_1}} or higher
-- **{{LANGUAGE_2}}** {{VERSION_2}} or higher
-- **{{DATABASE}}** {{DB_VERSION}} or higher
-- **{{TOOL}}** (for {{TOOL_PURPOSE}})
+- **{{PRIMARY_LANGUAGES}}** (latest stable version)
+- **Docker** (optional, for containerized deployment)
 
 ### Installation
 
 **Option 1: From Source**
 ```bash
-git clone https://github.com/{{ORG}}/{{REPO}}.git
-cd {{REPO}}
-{{INSTALL_COMMAND_1}}
-{{INSTALL_COMMAND_2}}
+git clone https://github.com/your-org/{{PROJECT_NAME}}.git
+cd {{PROJECT_NAME}}
+# Follow language-specific installation steps
 ```
 
-**Option 2: Using Package Manager**
+**Option 2: Docker**
 ```bash
-{{PACKAGE_MANAGER}} install {{PACKAGE_NAME}}
-```
-
-**Option 3: Docker**
-```bash
-docker pull {{DOCKER_IMAGE}}
-docker run -p {{PORT}}:{{PORT}} {{DOCKER_IMAGE}}
+docker pull your-org/{{PROJECT_NAME}}
+docker run -p 8080:8080 your-org/{{PROJECT_NAME}}
 ```
 
 ### Basic Usage
 
-```{{CODE_LANGUAGE}}
-{{BASIC_USAGE_EXAMPLE}}
-```
+```bash
+# Start the application
+./start.sh
 
-**Expected Output:**
-```
-{{EXAMPLE_OUTPUT}}
+# Or use language-specific commands
+# python main.py
+# go run main.go
+# npm start
 ```
 
 ---
@@ -78,20 +71,20 @@ docker run -p {{PORT}}:{{PORT}} {{DOCKER_IMAGE}}
 
 ```
 ┌─────────────────────────────────────────────┐
-│          {{CORE_SERVER}}                    │
-│  (Primary processing/orchestration)         │
+│          CoreService                         │
+│  (Primary processing/orchestration)          │
 └──────────────┬──────────────────────────────┘
                │
        ┌───────┴────────┐
        │                │
 ┌──────▼──────┐  ┌─────▼──────┐
-│{{COMPONENT_1}}│  │{{COMPONENT_2}}│
+│   Service   │  │   Service  │
 └─────────────┘  └────────────┘
        │                │
        └───────┬────────┘
                │
         ┌──────▼───────┐
-        │  {{DATABASE}}  │
+        │   Storage    │
         └──────────────┘
 ```
 
@@ -100,42 +93,29 @@ docker run -p {{PORT}}:{{PORT}} {{DOCKER_IMAGE}}
 | Layer | Technology | Purpose |
 |-------|------------|---------|
 | **Core** | {{PRIMARY_LANGUAGES}} | Business logic and processing |
-| **Framework** | {{FRAMEWORKS}} | Web services and APIs |
-| **Database** | {{DATABASES}} | Persistent storage |
-| **Communication** | {{COMM_PROTOCOLS}} | Inter-service messaging |
-| **Deployment** | {{DEPLOYMENT_TECH}} | Containerization and orchestration |
+| **Framework** | (Framework based on language) | Web services and APIs |
+| **Database** | PostgreSQL (if applicable) | Persistent storage |
+| **Communication** | REST/HTTP | Inter-service messaging |
+| **Deployment** | Docker | Containerization |
 
 ### Project Structure
 
 ```
-/{{ROOT}}
-├── /services           # Core APIs and backend services
-│   ├── /{{SERVICE_1}}  # {{SERVICE_1_DESCRIPTION}}
-│   └── /{{SERVICE_2}}  # {{SERVICE_2_DESCRIPTION}}
-├── /hardware           # Embedded/device code
-├── /sdk                # Client libraries and bindings
-│   ├── /{{SDK_LANG_1}} # {{SDK_LANG_1}} client
-│   └── /{{SDK_LANG_2}} # {{SDK_LANG_2}} client
-├── /deployment         # CI/CD and infrastructure
-│   ├── docker-compose.yml
-│   ├── kubernetes/
-│   └── terraform/
-├── /tests              # Test suites
+/{{PROJECT_NAME}}
+├── /src              # Source code
+├── /tests            # Test suites
 │   ├── /unit
 │   ├── /integration
 │   └── /e2e
-├── /docs               # Documentation
-│   ├── /api            # API specifications
-│   ├── /architecture   # Design docs
-│   └── /runbooks       # Operational guides
-├── /scripts            # Build and utility scripts
-├── /config             # Configuration files
+├── /docs             # Documentation
+├── /config           # Configuration files
 │   ├── dev.env
 │   ├── staging.env
 │   └── production.env
-├── AGENT.md            # AI agent instructions
-├── RULES.md            # Development standards
-└── README.md           # This file
+├── /scripts          # Build and utility scripts
+├── AGENT.md          # AI agent instructions
+├── RULES.md          # Development standards
+└── README.md         # This file
 ```
 
 ---
@@ -148,24 +128,20 @@ Create a `.env` file in the project root:
 
 ```bash
 # Core Configuration
-{{VAR_1}}={{VAR_1_DEFAULT}}           # {{VAR_1_DESCRIPTION}}
-{{VAR_2}}={{VAR_2_DEFAULT}}           # {{VAR_2_DESCRIPTION}}
+APP_ENV=development
+APP_PORT=8080
 
-# Database
-{{DB_URL_VAR}}={{DB_URL_DEFAULT}}     # {{DB_DESCRIPTION}}
-{{DB_POOL_VAR}}={{DB_POOL_DEFAULT}}   # Connection pool size
+# Database (if applicable)
+DATABASE_URL=postgresql://localhost:5432/{{PROJECT_NAME}}
+DB_POOL_SIZE=10
 
 # API Configuration
-{{API_PORT_VAR}}={{API_PORT_DEFAULT}} # API server port
-{{API_KEY_VAR}}={{API_KEY_EXAMPLE}}   # API authentication key
-
-# Feature Flags
-{{FEATURE_FLAG_1}}={{FLAG_1_DEFAULT}} # {{FEATURE_FLAG_1_DESCRIPTION}}
-{{FEATURE_FLAG_2}}={{FLAG_2_DEFAULT}} # {{FEATURE_FLAG_2_DESCRIPTION}}
+API_PORT=8080
+API_KEY=your-api-key-here
 
 # Logging
-LOG_LEVEL={{LOG_LEVEL_DEFAULT}}       # debug, info, warn, error
-LOG_FORMAT={{LOG_FORMAT_DEFAULT}}     # json, text
+LOG_LEVEL=info
+LOG_FORMAT=json
 ```
 
 ### Configuration Files
@@ -179,7 +155,7 @@ cp config/dev.env.example config/dev.env
 **Production:**
 ```bash
 # Use environment variables or secrets management
-export {{VAR_1}}="production-value"
+export APP_ENV="production"
 ```
 
 ---
@@ -190,47 +166,46 @@ export {{VAR_1}}="production-value"
 
 ```bash
 # Clone repository
-git clone https://github.com/{{ORG}}/{{REPO}}.git
-cd {{REPO}}
+git clone https://github.com/your-org/{{PROJECT_NAME}}.git
+cd {{PROJECT_NAME}}
 
 # Install dependencies
-{{DEV_INSTALL_COMMAND}}
+# (Use language-specific package manager)
 
-# Setup pre-commit hooks
-{{HOOK_SETUP_COMMAND}}
+# Setup pre-commit hooks (if configured)
+# pre-commit install
 
-# Start development services
-{{DEV_START_COMMAND}}
+# Start development server
+# (Use language-specific command)
 ```
 
 ### Development Workflow
 
 1. **Create feature branch:**
    ```bash
-   git checkout -b feat/{{FEATURE_NAME}}
+   git checkout -b feat/feature-name
    ```
 
 2. **Make changes following [RULES.md](RULES.md)**
 
 3. **Run tests:**
    ```bash
-   {{TEST_COMMAND}}
+   # Use language-specific test command
    ```
 
 4. **Lint and format:**
    ```bash
-   {{LINT_COMMAND}}
-   {{FORMAT_COMMAND}}
+   # Use language-specific lint/format commands
    ```
 
 5. **Commit using conventional commits:**
    ```bash
-   git commit -m "feat({{SCOPE}}): {{DESCRIPTION}}"
+   git commit -m "feat(scope): description"
    ```
 
 6. **Push and create pull request:**
    ```bash
-   git push origin feat/{{FEATURE_NAME}}
+   git push origin feat/feature-name
    ```
 
 ### Code Standards
@@ -244,25 +219,6 @@ This project follows strict development standards defined in **[RULES.md](RULES.
 - ✅ Explicit error handling
 - ✅ No magic values or hardcoded configs
 
-### Running Locally
-
-**Backend Services:**
-```bash
-cd services/{{SERVICE_NAME}}
-{{SERVICE_RUN_COMMAND}}
-```
-
-**Frontend (if applicable):**
-```bash
-cd {{FRONTEND_DIR}}
-{{FRONTEND_RUN_COMMAND}}
-```
-
-**Full Stack:**
-```bash
-docker-compose up -d
-```
-
 ---
 
 ## 🧪 Testing
@@ -270,26 +226,15 @@ docker-compose up -d
 ### Unit Tests
 
 ```bash
-{{UNIT_TEST_COMMAND}}
+# Run unit tests
+# (Use language-specific test command)
 ```
 
 ### Integration Tests
 
 ```bash
-{{INTEGRATION_TEST_COMMAND}}
-```
-
-### End-to-End Tests
-
-```bash
-{{E2E_TEST_COMMAND}}
-```
-
-### Coverage Report
-
-```bash
-{{COVERAGE_COMMAND}}
-# Report available at coverage/index.html
+# Run integration tests
+# (Use language-specific test command)
 ```
 
 ### Test Requirements
@@ -305,55 +250,22 @@ docker-compose up -d
 ### Base URL
 
 ```
-Development: http://localhost:{{API_PORT}}
-Staging:     https://staging.{{DOMAIN}}/api
-Production:  https://{{DOMAIN}}/api
+Development: http://localhost:8080
+Staging:     https://staging.example.com/api
+Production:  https://api.example.com
 ```
 
 ### Authentication
 
 ```bash
-curl -H "Authorization: Bearer {{TOKEN}}" \
-     https://{{DOMAIN}}/api/{{ENDPOINT}}
-```
-
-### Key Endpoints
-
-**{{ENDPOINT_1}}**
-```http
-{{HTTP_METHOD_1}} /api/{{ENDPOINT_1}}
-```
-
-**Request:**
-```json
-{{REQUEST_EXAMPLE_1}}
-```
-
-**Response:**
-```json
-{{RESPONSE_EXAMPLE_1}}
-```
-
-**{{ENDPOINT_2}}**
-```http
-{{HTTP_METHOD_2}} /api/{{ENDPOINT_2}}
-```
-
-**Request:**
-```json
-{{REQUEST_EXAMPLE_2}}
-```
-
-**Response:**
-```json
-{{RESPONSE_EXAMPLE_2}}
+curl -H "Authorization: Bearer YOUR_TOKEN" \
+     https://api.example.com/endpoint
 ```
 
 ### Full API Documentation
 
 - **OpenAPI Spec:** [docs/api/openapi.yaml](docs/api/openapi.yaml)
-- **Interactive Docs:** http://localhost:{{API_PORT}}/docs
-- **Postman Collection:** [docs/api/{{PROJECT_NAME}}.postman_collection.json](docs/api/)
+- **Interactive Docs:** http://localhost:8080/docs
 
 ---
 
@@ -363,51 +275,25 @@ curl -H "Authorization: Bearer {{TOKEN}}" \
 
 **Build image:**
 ```bash
-docker build -t {{DOCKER_IMAGE}}:{{VERSION}} .
+docker build -t your-org/{{PROJECT_NAME}}:0.1.0 .
 ```
 
 **Run container:**
 ```bash
 docker run -d \
-  -p {{PORT}}:{{PORT}} \
-  -e {{VAR_1}}={{VALUE_1}} \
-  -e {{VAR_2}}={{VALUE_2}} \
-  {{DOCKER_IMAGE}}:{{VERSION}}
-```
-
-### Kubernetes Deployment
-
-```bash
-kubectl apply -f deployment/kubernetes/
-kubectl rollout status deployment/{{DEPLOYMENT_NAME}}
-```
-
-### CI/CD Pipeline
-
-**GitHub Actions:**
-```yaml
-# .github/workflows/deploy.yml
-name: Deploy
-on:
-  push:
-    branches: [main]
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Deploy to {{ENVIRONMENT}}
-        run: {{DEPLOY_COMMAND}}
+  -p 8080:8080 \
+  -e APP_ENV=production \
+  your-org/{{PROJECT_NAME}}:0.1.0
 ```
 
 ### Health Checks
 
 ```bash
 # Health endpoint
-curl http://localhost:{{PORT}}/health
+curl http://localhost:8080/health
 
 # Metrics
-curl http://localhost:{{PORT}}/metrics
+curl http://localhost:8080/metrics
 ```
 
 ---
@@ -418,13 +304,6 @@ This project includes AI agent configuration files for automated development:
 
 - **[AGENT.md](AGENT.md)** - Instructions for AI coding agents
 - **[RULES.md](RULES.md)** - Development standards and enforcement rules
-
-### Using with LLM Agents
-
-```bash
-# Include in agent context
-agent-cli --context AGENT.md,RULES.md --task "{{TASK_DESCRIPTION}}"
-```
 
 ---
 
@@ -444,8 +323,8 @@ We welcome contributions! Please follow these steps:
 ### Contributor Guidelines
 
 - ✅ All PRs must pass CI/CD checks
-- ✅ Code must be reviewed by at least {{MIN_REVIEWERS}} maintainers
-- ✅ Tests must pass with {{MIN_COVERAGE}}%+ coverage
+- ✅ Code must be reviewed by at least 1 maintainer
+- ✅ Tests must pass with 80%+ coverage
 - ✅ Documentation must be updated for API changes
 - ✅ Follow [Conventional Commits](https://www.conventionalcommits.org/)
 
@@ -453,11 +332,9 @@ We welcome contributions! Please follow these steps:
 
 ## 📋 Roadmap
 
-- [x] {{COMPLETED_FEATURE_1}}
-- [x] {{COMPLETED_FEATURE_2}}
-- [ ] {{PLANNED_FEATURE_1}} (v{{NEXT_VERSION}})
-- [ ] {{PLANNED_FEATURE_2}} (v{{NEXT_VERSION}})
-- [ ] {{FUTURE_FEATURE_1}} (Future)
+- [ ] Initial release (v0.1.0)
+- [ ] Enhanced features (v0.2.0)
+- [ ] Performance improvements (v0.3.0)
 
 See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 
@@ -465,50 +342,18 @@ See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 
 ## 📄 License
 
-This project is licensed under the **{{LICENSE}}** - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT** - see the [LICENSE](LICENSE) file for details.
 
 ---
 
 ## 📞 Support & Contact
 
 - **Documentation:** [docs/](docs/)
-- **Issues:** [GitHub Issues](https://github.com/{{ORG}}/{{REPO}}/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/{{ORG}}/{{REPO}}/discussions)
-- **Email:** {{CONTACT_EMAIL}}
-- **Slack/Discord:** {{COMMUNITY_LINK}}
-
----
-
-## 🙏 Acknowledgments
-
-- {{ACKNOWLEDGMENT_1}}
-- {{ACKNOWLEDGMENT_2}}
-- {{ACKNOWLEDGMENT_3}}
-
----
-
-## 📝 Template Configuration
-
-**To customize this README, replace all `{{PLACEHOLDERS}}`:**
-
-| Placeholder | Purpose | Example |
-|-------------|---------|---------|
-| `{{PROJECT_NAME}}` | Project name | "Atlas", "DataForge" |
-| `{{PROJECT_TAGLINE}}` | One-line description | "Distributed IoT platform" |
-| `{{ORG}}` | GitHub organization | "acme-corp" |
-| `{{REPO}}` | Repository name | "atlas-platform" |
-| `{{LICENSE}}` | License type | "MIT", "Apache-2.0" |
-| `{{VERSION}}` | Current version | "1.0.0" |
-| `{{PRIMARY_LANGUAGES}}` | Main languages | "Go, Python, TypeScript" |
-| `{{FRAMEWORKS}}` | Core frameworks | "Fiber, FastAPI, React" |
-| `{{DATABASES}}` | Database systems | "PostgreSQL, Redis" |
-| `{{COMM_PROTOCOLS}}` | Communication protocols | "MQTT, gRPC, WebSockets" |
-| `{{API_PORT}}` | API server port | "8080", "3000" |
-| `{{DOCKER_IMAGE}}` | Docker image name | "acme/atlas" |
+- **Issues:** [GitHub Issues](https://github.com/your-org/{{PROJECT_NAME}}/issues)
+- **Discussions:** [GitHub Discussions](https://github.com/your-org/{{PROJECT_NAME}}/discussions)
 
 ---
 
 **Version:** 1.0  
 **Last Updated:** 2025-10-29  
 **Template Compatibility:** Universal projects, works with AGENT.md and RULES.md
-
